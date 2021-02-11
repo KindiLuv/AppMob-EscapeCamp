@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/camp_navigation"
+    app:startDestination="@id/homePage">
+
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.paydiluv.escapecamp.view.homePage"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/homeToProp"
+            app:destination="@id/properties" />
+        <action
+            android:id="@+id/homeToLexicon"
+            app:destination="@id/mainLexicon" />
+        <action
+            android:id="@+id/homeToMap"
+            app:destination="@id/map" />
+        <action
+            android:id="@+id/homeToNotes"
+            app:destination="@id/notes" />
+    </fragment>
+    <fragment
+        android:id="@+id/properties"
+        android:name="com.paydiluv.escapecamp.view.Properties"
+        android:label="fragment_properties"
+        tools:layout="@layout/fragment_properties" />
+    <fragment
+        android:id="@+id/compass"
+        android:name="com.paydiluv.escapecamp.view.Compass"
+        android:label="fragment_compass"
+        tools:layout="@layout/fragment_compass" />
+    <fragment
+        android:id="@+id/mainLexicon"
+        android:name="com.paydiluv.escapecamp.view.mainLexicon"
+        android:label="fragment_main_lexicon"
+        tools:layout="@layout/fragment_main_lexicon" />
+    <fragment
+        android:id="@+id/map"
+        android:name="com.paydiluv.escapecamp.view.Map"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/mapToCompass"
+            app:destination="@id/compass" />
+    </fragment>
+    <fragment
+        android:id="@+id/notes"
+        android:name="com.paydiluv.escapecamp.view.Notes"
+        android:label="fragment_notes"
+        tools:layout="@layout/fragment_notes" />
+</navigation>
