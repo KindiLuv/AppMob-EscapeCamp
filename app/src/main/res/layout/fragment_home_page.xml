@@ -102,12 +102,16 @@
         android:fontFamily="@font/allura"
         android:lineSpacingExtra="18sp"
         android:rotation="-8"
+        android:text="Camp Escape"
         android:textColor="#138A18"
         android:textSize="36sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/bottombar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/bottombar"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        tools:text="Camp Escape" />
+        app:layout_constraintVertical_bias="0.512"
+        tools:text="Camp Escape"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

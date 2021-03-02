@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.paydiluv.escapecamp.R;
 
@@ -20,16 +21,16 @@ import butterknife.ButterKnife;
 public class homePage extends Fragment {
 
     @BindView(R.id.mapButton)
-    public Button mapButton;
+    public ImageButton mapButton;
 
     @BindView(R.id.LexiconButton)
-    public Button lexiconButton;
+    public ImageButton lexiconButton;
 
     @BindView(R.id.propButton)
-    public Button propButton;
+    public ImageButton propButton;
 
     @BindView(R.id.notesButton)
-    public Button notesButton;
+    public ImageButton notesButton;
 
     public void homeToMap(View button){
        Navigation.findNavController(button).navigate(homePageDirections.homeToMap());
