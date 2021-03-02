@@ -20,10 +20,31 @@ import butterknife.ButterKnife;
 public class homePage extends Fragment {
 
     @BindView(R.id.mapButton)
-    public Button button;
+    public Button mapButton;
+
+    @BindView(R.id.LexiconButton)
+    public Button lexiconButton;
+
+    @BindView(R.id.propButton)
+    public Button propButton;
+
+    @BindView(R.id.notesButton)
+    public Button notesButton;
 
     public void homeToMap(View button){
        Navigation.findNavController(button).navigate(homePageDirections.homeToMap());
+    }
+
+    public void homeToProp(View button){
+       Navigation.findNavController(button).navigate(homePageDirections.propButton());
+    }
+
+    public void homeToLexicon(View button){
+        Navigation.findNavController(button).navigate(homePageDirections.homeToLexicon());
+    }
+
+    public void homeToNotes(View button){
+        Navigation.findNavController(button).navigate(homePageDirections.homeToNotes());
     }
 
     @Override
@@ -37,6 +58,9 @@ public class homePage extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        button.setOnClickListener(this::homeToMap);
+        mapButton.setOnClickListener(this::homeToMap);
+        lexiconButton.setOnClickListener(this::homeToLexicon);
+        notesButton.setOnClickListener(this::homeToNotes);
+        propButton.setOnClickListener(this::homeToProp);
     }
 }

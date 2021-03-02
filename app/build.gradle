@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'androidx.navigation.safeargs'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -13,6 +14,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -43,7 +45,7 @@ def preferencesVersion = '1.1.0'
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     // Libraries imports
 
@@ -53,19 +55,23 @@ dependencies {
 
     // Butterknife
     implementation "com.jakewharton:butterknife:$butterKnifeVersion"
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
 
     // Room
+    //noinspection GradleDependency
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
     annotationProcessor "androidx.room:room-compiler:$roomVersion"
 
     // Navigation
+    //noinspection GradleDependency
     implementation "androidx.navigation:navigation-fragment:$navVersion"
+    //noinspection GradleDependency
     implementation "androidx.navigation:navigation-ui:$navVersion"
 
     // Material
-    implementation "com.google.android.material:material:1.2.1"
+    implementation "com.google.android.material:material:1.3.0"
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
@@ -76,6 +82,18 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
 
+    implementation platform('com.google.firebase:firebase-bom:26.5.0')
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:26.6.0')
+
+    // Declare the dependency for the Realtime Database library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-database'
+
+    implementation 'com.android.support:multidex:1.0.3'
+
     // Glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
 
@@ -83,9 +101,10 @@ dependencies {
     implementation "com.android.support:palette-v7:$supportVersion"
 
     // Preferences
+    //noinspection GradleDependency
     implementation "androidx.preference:preference:$preferencesVersion"
 
-    testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

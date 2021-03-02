@@ -9,9 +9,9 @@
         android:id="@+id/homePage"
         android:name="com.paydiluv.escapecamp.view.homePage"
         android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" >
+        tools:layout="@layout/fragment_home_page">
         <action
-            android:id="@+id/homeToProp"
+            android:id="@+id/propButton"
             app:destination="@id/properties" />
         <action
             android:id="@+id/homeToLexicon"
@@ -27,7 +27,11 @@
         android:id="@+id/properties"
         android:name="com.paydiluv.escapecamp.view.Properties"
         android:label="fragment_properties"
-        tools:layout="@layout/fragment_properties" />
+        tools:layout="@layout/fragment_properties" >
+        <action
+            android:id="@+id/action_properties_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
     <fragment
         android:id="@+id/compass"
         android:name="com.paydiluv.escapecamp.view.Compass"
@@ -37,7 +41,11 @@
         android:id="@+id/mainLexicon"
         android:name="com.paydiluv.escapecamp.view.mainLexicon"
         android:label="fragment_main_lexicon"
-        tools:layout="@layout/fragment_main_lexicon" />
+        tools:layout="@layout/fragment_main_lexicon" >
+        <action
+            android:id="@+id/action_mainLexicon_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
     <fragment
         android:id="@+id/map"
         android:name="com.paydiluv.escapecamp.view.Map"
@@ -46,10 +54,17 @@
         <action
             android:id="@+id/mapToCompass"
             app:destination="@id/compass" />
+        <action
+            android:id="@+id/map_to_homePage"
+            app:destination="@id/homePage" />
     </fragment>
     <fragment
         android:id="@+id/notes"
         android:name="com.paydiluv.escapecamp.view.Notes"
         android:label="fragment_notes"
-        tools:layout="@layout/fragment_notes" />
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_notes_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
 </navigation>
