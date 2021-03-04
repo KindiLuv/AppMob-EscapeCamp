@@ -91,30 +91,36 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="410dp"
+        android:layout_height="658dp"
         android:src="@android:drawable/screen_background_dark_transparent"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/bottombar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="247dp"
+        android:layout_height="199dp"
         android:fontFamily="@font/allura"
-        android:lineSpacingExtra="18sp"
+        android:gravity="center"
+        android:lineSpacingExtra="14sp"
         android:rotation="-8"
         android:text="Camp Escape"
-        android:textColor="#138A18"
-        android:textSize="36sp"
+        android:textColor="#4B7A4C"
+        android:textSize="72sp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/bottombar"
         app:layout_constraintEnd_toEndOf="@id/bottombar"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.512"
+        app:layout_constraintVertical_bias="0.264"
         tools:text="Camp Escape"
         tools:visibility="visible" />
 
