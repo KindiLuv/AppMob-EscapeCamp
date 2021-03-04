@@ -36,7 +36,11 @@
         android:id="@+id/compass"
         android:name="com.paydiluv.escapecamp.view.Compass"
         android:label="fragment_compass"
-        tools:layout="@layout/fragment_compass" />
+        tools:layout="@layout/fragment_compass" >
+        <action
+            android:id="@+id/action_compass_to_map"
+            app:destination="@id/map" />
+    </fragment>
     <fragment
         android:id="@+id/mainLexicon"
         android:name="com.paydiluv.escapecamp.view.mainLexicon"
