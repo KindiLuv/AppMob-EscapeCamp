@@ -1,5 +1,6 @@
 package com.paydiluv.escapecamp.view;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,15 +21,19 @@ import butterknife.ButterKnife;
 
 public class homePage extends Fragment {
 
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.mapButton)
     public ImageButton mapButton;
 
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.LexiconButton)
     public ImageButton lexiconButton;
 
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.propButton)
     public ImageButton propButton;
 
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.notesButton)
     public ImageButton notesButton;
 
