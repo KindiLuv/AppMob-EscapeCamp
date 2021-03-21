@@ -8,13 +8,17 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.paydiluv.escapecamp.R;
+import com.paydiluv.escapecamp.utils.Logics;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,6 +41,12 @@ public class homePage extends Fragment {
     @BindView(R.id.notesButton)
     public ImageButton notesButton;
 
+    @BindView(R.id.finalcode)
+    public TextInputEditText finalcode;
+
+    @BindView(R.id.escaped)
+    public TextView escaped;
+
     public void homeToMap(View button){
        Navigation.findNavController(button).navigate(homePageDirections.homeToMap());
     }
@@ -51,6 +61,15 @@ public class homePage extends Fragment {
 
     public void homeToNotes(View button){
         Navigation.findNavController(button).navigate(homePageDirections.homeToNotes());
+    }
+
+    public boolean oskour(View v, int keyCode, KeyEvent event){
+        if( keyCode == KeyEvent.KEYCODE_ENTER && Logics.mapTrig && Logics.notescleared){
+            if(finalcode.getText().toString() == "64152"){
+                escaped.setVisibility(View.VISIBLE);
+            }
+        }
+        return false;
     }
 
     @Override
@@ -68,5 +87,6 @@ public class homePage extends Fragment {
         lexiconButton.setOnClickListener(this::homeToLexicon);
         notesButton.setOnClickListener(this::homeToNotes);
         propButton.setOnClickListener(this::homeToProp);
+        finalcode.setOnKeyListener(this::oskour);
     }
 }

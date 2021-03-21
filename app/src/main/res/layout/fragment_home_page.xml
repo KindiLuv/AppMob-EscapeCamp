@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     app:layout_goneMarginBottom="0px"
-    tools:context=".view.homePage" >
+    tools:context=".view.homePage"
+    tools:visibility="visible">
 
     <ImageView
         android:id="@+id/background"
@@ -97,7 +98,7 @@
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/bottombar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -123,5 +124,34 @@
         app:layout_constraintVertical_bias="0.264"
         tools:text="Camp Escape"
         tools:visibility="visible" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/finalcode"
+        android:layout_width="251dp"
+        android:layout_height="63dp"
+        android:hint="Escape Code"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/bottombar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/escaped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/allura"
+        android:text="YOU ESCAPED!"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.561"
+        tools:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

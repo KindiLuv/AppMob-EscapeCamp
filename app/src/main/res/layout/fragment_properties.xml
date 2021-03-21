@@ -37,9 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="52dp"
         android:rotation="90"
-        android:text="8876250"
+        android:text="64152"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="8876250" />
+        tools:text="64152" />
 </androidx.constraintlayout.widget.ConstraintLayout>

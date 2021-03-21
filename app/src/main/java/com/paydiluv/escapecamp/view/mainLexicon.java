@@ -12,15 +12,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.paydiluv.escapecamp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class mainLexicon extends Fragment {
-
     @BindView(R.id.lexiconToHome)
     public Button lexitoHomeButton;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     public void backToHome(View button){
         Navigation.findNavController(button).navigate(mainLexiconDirections.actionMainLexiconToHomePage());

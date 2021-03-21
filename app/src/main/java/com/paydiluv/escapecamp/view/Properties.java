@@ -23,7 +23,6 @@ import com.paydiluv.escapecamp.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
 public class Properties extends Fragment {
 
     @SuppressLint("NonConstantResourceId")
