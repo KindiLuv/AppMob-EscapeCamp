@@ -1,5 +1,6 @@
 package com.paydiluv.escapecamp.view;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,11 +22,16 @@ public class Compass extends Fragment {
 
     @BindView(R.id.backToMap)
     public ImageButton backToMapButton;
+    private Context context;
 
     public void BackToMap(View button){
         Navigation.findNavController(button).navigate(CompassDirections.actionCompassToMap());
     }
-
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

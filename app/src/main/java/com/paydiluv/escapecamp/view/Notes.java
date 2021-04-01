@@ -1,5 +1,7 @@
 package com.paydiluv.escapecamp.view;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+@SuppressLint("UseSwitchCompatOrMaterialCode")
 public class Notes extends Fragment {
 
     private ArrayList<Integer> inputs;
@@ -46,6 +49,7 @@ public class Notes extends Fragment {
 
     @BindView(R.id.noteswitch6)
     public Switch six;
+    private Context context;
 
     public void backToHome(View button){
         Navigation.findNavController(button).navigate(NotesDirections.actionNotesToHomePage());
@@ -68,6 +72,12 @@ public class Notes extends Fragment {
                 Logics.triggernotes();
             }
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
     }
 
     @Override

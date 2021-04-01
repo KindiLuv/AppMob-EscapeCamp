@@ -60,7 +60,7 @@ public class Map extends Fragment {
 
     @BindView(R.id.textView3)
     public TextView validity;
-
+    private Context context;
 
 
     @Override
@@ -83,6 +83,12 @@ public class Map extends Fragment {
     public void setLogics(View view){
         validity.setTextColor(Color.GREEN);
         Logics.triggerMaps();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
     }
 
     @SuppressLint("ResourceAsColor")

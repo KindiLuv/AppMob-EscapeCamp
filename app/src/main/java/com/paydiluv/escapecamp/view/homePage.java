@@ -1,6 +1,8 @@
 package com.paydiluv.escapecamp.view;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,6 +21,8 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.paydiluv.escapecamp.R;
 import com.paydiluv.escapecamp.utils.Logics;
+
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,11 +45,14 @@ public class homePage extends Fragment {
     @BindView(R.id.notesButton)
     public ImageButton notesButton;
 
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.finalcode)
     public TextInputEditText finalcode;
 
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.escaped)
     public TextView escaped;
+    private Context context;
 
     public void homeToMap(View button){
        Navigation.findNavController(button).navigate(homePageDirections.homeToMap());
@@ -63,13 +70,23 @@ public class homePage extends Fragment {
         Navigation.findNavController(button).navigate(homePageDirections.homeToNotes());
     }
 
-    public boolean oskour(View v, int keyCode, KeyEvent event){
+    public boolean validator(View v, int keyCode, KeyEvent event){
         if( keyCode == KeyEvent.KEYCODE_ENTER && Logics.mapTrig && Logics.notescleared){
-            if(finalcode.getText().toString() == "64152"){
-                escaped.setVisibility(View.VISIBLE);
+            System.out.println("obj");
+            System.out.println(finalcode.getEditableText().toString().trim());
+            if(finalcode.getEditableText().toString().trim().equals("64152")) {
+                escaped.setTextColor(Color.WHITE);
+                System.out.println("visibility changed");
             }
         }
+        System.out.println(keyCode);
         return false;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
     }
 
     @Override
@@ -87,6 +104,6 @@ public class homePage extends Fragment {
         lexiconButton.setOnClickListener(this::homeToLexicon);
         notesButton.setOnClickListener(this::homeToNotes);
         propButton.setOnClickListener(this::homeToProp);
-        finalcode.setOnKeyListener(this::oskour);
+        finalcode.setOnKeyListener(this::validator);
     }
 }

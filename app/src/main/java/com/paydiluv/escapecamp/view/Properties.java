@@ -1,6 +1,7 @@
 package com.paydiluv.escapecamp.view;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -35,6 +36,7 @@ public class Properties extends Fragment {
 
     @BindView(R.id.frameLayout3)
     public ConstraintLayout lay;
+    private Context context;
 
     public void backToHome(View button){
         Navigation.findNavController(button).navigate(PropertiesDirections.actionPropertiesToHomePage());
@@ -47,6 +49,12 @@ public class Properties extends Fragment {
         }else{
             lay.setBackgroundResource(R.color.white);
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
     }
 
     @Override
